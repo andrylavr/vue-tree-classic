@@ -16,3 +16,10 @@ Demo2 https://andrylavr.github.io/vue-tree-classic/html/
 * Drag&Drop items
 * FontAwesome icons for tree and menu
 * Font-size agnostic css
+
+# How to use
+1. Include deps to your HTML page (`jquery`, `jquery-contextmenu`, `html/tree-view-classic.css`)
+2. See `index.html`, `src/App.vue` for more info
+
+# Limitations
+* Cannot be used via `npm` right now, just copy and paste =)
