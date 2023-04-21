@@ -1,0 +1,235 @@
+.treeview{
+    padding: 1em;
+}
+
+.treeview details > summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.treeview details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.treeview details[open]>summary:before {
+    content: "";
+    background:
+            url('data:image/svg+xml;utf8,<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><title/><g><rect x="0" y="0" width="12" height="12" fill="transparent" stroke="black" stroke-width="1"/><line x1="3" y1="6" x2="9" y2="6" stroke="black" stroke-width="1"/></g></svg>')
+            0 center / 1.3em 1.3em no-repeat;
+}
+
+.treeview details>summary:before {
+    content: "";
+    background:
+            url('data:image/svg+xml;utf8,<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><g><rect x="0" y="0" width="12" height="12" fill="transparent" stroke="black" stroke-width="1"/><line x1="3" y1="6" x2="9" y2="6" stroke="black" stroke-width="1"/><line x1="6" y1="3" x2="6" y2="9" stroke="black" stroke-width="1"/></g></svg>')
+            0 center / 1.3em 1.3em no-repeat;
+    font-weight: bold;
+    font-size: 0.5em;
+    text-align: center;
+    color: black;
+
+    z-index: 2;
+    width: 1.3em;
+    height: 1.4em;
+    margin-right: 0.5em;
+    margin-left: -0.2em;
+    margin-top: -0.2em;
+}
+
+.treeview,
+.treeview details[open]>summary:before,
+.treeview details>summary:before
+{
+    background-color: white;
+}
+
+.treeview details{
+    border-left: 1px dotted #111;
+    position: relative;
+}
+
+.treeview details:last-child{
+    border-left: 1px solid transparent;
+    position: relative;
+}
+
+.treeview details:last-child::before{
+    border-left: 1px dotted #111;
+    border-top: none;
+    display: block;
+    position: absolute;
+    width: calc(0.5em + 1px);
+    content: '';
+    height: calc(0.5em + 1px);
+    top: 0;
+    left: -1px;
+}
+
+.treeview details::before{
+    border-bottom: 1px dotted #111;
+    border-left: 1px dotted #111;
+    border-top: none;
+    display: block;
+    position: absolute;
+    width: calc(0.5em + 1px);
+    content: '';
+    height: calc(0.25em + 1px);
+    top: 0.25em;
+    left: 0;
+}
+
+.treeview details > *{
+    margin-left: -0.3em;
+}
+
+.treeview summary {
+    user-select: none;
+    cursor: pointer;
+    display: inline;
+}
+
+.treeview summary .fa{
+    margin-right: 0.2em;
+}
+
+.treeview .fa {
+    color: #54A3F5;
+    width: 1em;
+    height: 1em;
+}
+
+.treeview .folder-content > div::before{
+    display: inline-block;
+    width: 0.6em;
+    border-top: 1px dotted #111;
+    height: 0.3em;
+    content: '';
+    /*margin-right: 0.1em;*/
+    margin-right: 0;
+}
+
+.treeview div > .fa{
+    margin-left: -0.2em;
+}
+
+.treeview .folder-content > div{
+    border-left: 1px dotted #111;
+}
+
+.treeview .folder-content > div:first-child{
+    padding-top: 0.2em;
+}
+
+.treeview .folder-content > div:last-child{
+    border-left: none;
+}
+
+.treeview .folder-content > div:last-child::before{
+    border-left: 1px dotted #111;
+    display: inline-block;
+    width: 0.6em;
+    border-bottom: 1px dotted #111;
+    border-top: none;
+    content: '';
+    vertical-align: super;
+    height: 0.5em;
+}
+
+.treeview .folder-content{
+    margin-left: calc(1em + 1px);
+    margin-top: -0.2em;
+}
+
+.treeview .leaf,
+.treeview summary {
+    display: block;
+    width: fit-content;
+    width: -moz-fit-content;
+    border: solid 1px transparent;
+    outline: none;
+    cursor: pointer;
+}
+
+.treeview .leaf-content{
+    text-decoration: none;
+    color: black;
+    padding: 0 0.1em;
+    margin-left: -0.2em;
+}
+
+.treeview summary .summary-content{
+    padding: 0 3px 0 1px;
+    border: 1px transparent solid;
+}
+
+/* Focus */
+.treeview .leaf-content:focus,
+.treeview summary:focus .summary-content
+{
+    background-color: #54A3F5;
+    border: 1px #2B71BC solid;
+    outline: none;
+    color: #FFFDFD;
+}
+
+.treeview .leaf-content:focus .fa,
+.treeview summary:focus .fa
+{
+    color: #FFFDFD;
+}
+/* Focus end */
+
+
+/* Buttons */
+.treeview .buttons{
+    margin: 0 5px 0 10px;
+    visibility: hidden;
+}
+
+.treeview .buttons button{
+    padding: 0;
+    border: none;
+    background: none;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+}
+
+.treeview summary:hover .buttons,
+.treeview .leaf:hover .buttons,
+.treeview :focus .buttons,
+.treeview summary:focus-within .buttons,
+.treeview .leaf:focus-within .buttons
+{
+    visibility: visible;
+}
+
+.treeview button{
+    opacity: 0.5;
+}
+.treeview button:hover,
+.treeview button:focus
+{
+    opacity: 1;
+}
+/* Buttons end */
+
+
+/* Drag */
+.treeview .dragovered .summary-content,
+.treeview .leaf-content.dragovered
+{
+    border: 1px dashed blue;
+}
+
+.treeview .dragstarted .dragovered{
+    border: 1px dashed red;
+    color: red;
+}
+
+.treeview .dragstarted{
+    opacity: 0.5;
+}
+/* Drag end */

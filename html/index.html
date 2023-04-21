@@ -1,0 +1,122 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css"/>
+
+    <!--    Roboto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="tree-view-classic.css"/>
+</head>
+<body>
+
+<style>
+    .treeview{
+        font-size: 13pt;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+
+    .treeview,
+    .treeview details[open]>summary:before,
+    .treeview details>summary:before
+    {
+        background-color: white;
+    }
+
+    .plus-btn .fa{
+        color: blue;
+    }
+    :focus .plus-btn .fa{
+        color: white !important;
+    }
+
+    .minus-btn .fa{
+        color: red;
+    }
+    :focus .minus-btn .fa{
+        color: red !important;
+    }
+</style>
+
+<div class="treeview">
+    <details open>
+        <summary>
+            <span class="summary-content">
+                <i class="icon fa fa-folder"></i>title
+            </span>
+        </summary>
+        <div class="folder-content">
+            <div class="leaf">
+                <a href="#" class="leaf-content">
+                    <i class="icon fa fa-globe-w"></i>leaf1
+                </a>
+            </div>
+            <div class="leaf">
+                <a href="#" class="leaf-content">
+                    leaf2
+                </a>
+            </div>
+        </div>
+    </details>
+    <details open>
+        <summary>
+            <span class="summary-content">
+                <i class="fa fa-folder"></i>another folder
+            </span>
+        </summary>
+        <div class="folder-content">
+            <div class="leaf">
+                <a href="#" class="leaf-content">
+                    leaf3
+                </a>
+            </div>
+            <details open class="focused">
+                <summary>
+                    <span class="summary-content">
+                        <i class="fa fa-folder" style="color: coral"></i>folder in folder
+
+                        <span class="buttons">
+                            <button class="plus-btn" title="Add" onclick="alert('clicked');">
+                                <i class="fa fa-plus-circle"></i>
+                            </button>
+                            <button class="minus-btn" title="Delete" onclick="alert('clicked minus!');">
+                                <i class="fa fa-minus-circle"></i>
+                            </button>
+                        </span>
+                    </span>
+                </summary>
+                <div class="folder-content">
+                    <div class="leaf">
+                        <a href="#" class="leaf-content">
+                            leaf4
+                        </a>
+
+                        <span class="buttons">
+                            <button class="plus-btn" title="Add" onclick="alert('clicked');">
+                                <i class="fa fa-plus-circle"></i>
+                            </button>
+                            <button class="minus-btn" title="Delete" onclick="alert('clicked minus!');">
+                                <i class="fa fa-minus-circle"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="leaf">
+                        <a href="#" class="leaf-content">
+                            leaf5
+                        </a>
+                    </div>
+
+                </div>
+            </details>
+
+            <div class="leaf">
+                <a href="#" class="leaf-content">
+                    leaf6
+                </a>
+            </div>
+        </div>
+    </details>
+</div>
+
+</body>
+</html>
